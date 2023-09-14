@@ -1,13 +1,18 @@
 
 import './App.css'
-import Card from './components/Card/Card'
+import Cards from './components/Cards/Cards'
+import CardsDetails from './components/ShowCardDetails/CardsDetails'
 
 function App() {
 
   return (
     <>
       <h1 className='text-3xl font-semibold text-center mt-6'>Course Registration</h1>
-      <Card></Card>
+      <div className='flex mx-6 gap-4'>
+         <Cards></Cards>
+        <CardsDetails></CardsDetails>
+      </div>
+      
     </>
   )
 }
