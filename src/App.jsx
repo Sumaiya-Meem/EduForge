@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h1 className='text-3xl font-semibold text-center mt-6'>Course Registration</h1>
-      <div className='flex mx-6 gap-4'>
+      <div className='flex mx-6 flex-col md:flex-row gap-4'>
          <Cards></Cards>
         <CardsDetails></CardsDetails>
       </div>
