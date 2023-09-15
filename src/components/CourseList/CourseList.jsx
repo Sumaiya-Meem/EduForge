@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 const CourseList = ({course}) => {
     const {title}=course
     return (
-        <div>
-            <li className='text-[#1c1b1b99]'>{title}</li>
+        <div className='p-3'>
+            <li className='text-[#1c1b1b99] list-decimal'>{title}</li>
         </div>
     );
 };
