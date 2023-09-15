@@ -15,7 +15,7 @@ const Cards = ({handleAddCourseName}) => {
     },[])
     // console.log(cardData)
     return (
-        <div className="w-3/4 border-red-200 border-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="w-full md:w-2/4 lg:w-3/4  grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
             {
                 cardData.map((card) => <Card key={card.id} card={card} handleAddCourseName={handleAddCourseName}></Card>)
             }

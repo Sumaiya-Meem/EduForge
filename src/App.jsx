@@ -10,12 +10,14 @@ function App() {
   const [selectedCourse, setSelectedCourse] = useState([])
   const [totalCredit, setTotalCredit] = useState(0)
   const [remainingHour, setRemainingHour] = useState(0)
+  const [totalCost, setTotalCost] = useState(0)
 
   const handleAddCourseName = (card) => {
 
     const isCourseNameExist = selectedCourse.find((item) => item.id == card.id)
 
     let count = parseInt(card.credit);
+    let cost=parseInt(card.price);
 
     if (isCourseNameExist) {
       toast.warn("Already select this course", {
@@ -25,6 +27,7 @@ function App() {
     else {
       selectedCourse.forEach((item) => {
         count = parseInt(count) + parseInt(item.credit);
+        cost =parseInt(cost) + parseInt(item.price);
       });
       // console.log(count)
       const remaining = 20 - count;
@@ -35,7 +38,8 @@ function App() {
       }
       else {
         setRemainingHour(remaining);
-        setTotalCredit(count)
+        setTotalCredit(count);
+        setTotalCost(cost);
         const newSelectedCourse = [...selectedCourse, card]
         setSelectedCourse(newSelectedCourse);
       }
@@ -49,7 +53,7 @@ function App() {
       <div className='flex mx-6 flex-col md:flex-row gap-4'>
         <Cards handleAddCourseName={handleAddCourseName}></Cards>
 
-        <CardsDetails selectedCourse={selectedCourse} totalCredit={totalCredit} remainingHour={remainingHour}></CardsDetails>
+        <CardsDetails selectedCourse={selectedCourse} totalCredit={totalCredit} remainingHour={remainingHour} totalCost={totalCost}></CardsDetails>
         <ToastContainer />
       </div>
 
