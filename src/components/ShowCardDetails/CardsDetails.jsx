@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 
-const CardsDetails = ({ selectedCourse }) => {
+const CardsDetails = ({ selectedCourse,totalCredit,remainingHour}) => {
     return (
         <div className="w-1/4 border-yellow-200 border-2 p-2">
                 <div className='h-[60px]'>
-                <h2 className='text-[#2F80ED] text-lg font-semibold'>Credit Hour Remaining  hr</h2>                
+                <h2 className='text-[#2F80ED] text-lg font-semibold'>Credit Hour Remaining {remainingHour} hr</h2>                
                 </div>
                 <hr />
                 <div className='mb-4'>
@@ -20,13 +20,15 @@ const CardsDetails = ({ selectedCourse }) => {
                 </div>
                 <hr />
                 <div>
-                    <h2 className='font-medium text-[#1c1b1bcc]'>Total Credit Hour :</h2>
+                    <h2 className='font-medium text-[#1c1b1bcc]'>Total Credit Hour : {totalCredit}</h2>
                 </div>
         </div>
     );
 };
 CardsDetails.propTypes = {
-    selectedCourse: PropTypes.array
+    selectedCourse: PropTypes.array,
+    remainingHour:PropTypes.number,
+    totalCredit:PropTypes.number
 }
 
 export default CardsDetails;
